@@ -47,12 +47,22 @@ function init() {
 	
 }
 
+var SPEED = 0.01;
+
+function rotateBird() {
+	mesh.rotation.x -= SPEED * 2;
+	mesh.rotation.y -= SPEED;
+	mesh.rotation.z -= SPEED * 3;
+}
+
+
 function animate(){
 
 	requestAnimationFrame(animate);
 
 	//Render the scene.
 	renderer.render(scene, camera);
+	rotateBird();
 	controls.update();
 
 	}
