@@ -1,6 +1,6 @@
 //set up the secne, camera, and renderer as golbal variables.
 var scene, camera, renderer;
-
+var bird;
 init();
 animate();
 
@@ -27,7 +27,7 @@ function init() {
 
 //creat a light, set its postion, and add it to the scene.
 	var light = new THREE.PointLight(0xffffff);
-	light.position.set(100,200,100);
+	light.position.set(3000,800,1500);
 	scene.add(light);
 	var light = new THREE.AmbientLight(0xffffff);
 	scene.add(light);
@@ -36,23 +36,20 @@ function init() {
 	var loader = new THREE.JSONLoader();
 	loader.load("models/twitterLogo.json", function(geometry) {
 		var material = new THREE.MeshLambertMaterial({color: 0x1DA1F2});
-		mesh = new THREE.Mesh(geometry, material);
-		scene.add(mesh);
+		bird = new THREE.Mesh(geometry, material);
+		scene.add(bird);
 	});
 
 //add orbitControls so that we can pan around with the mouse.
 	controls = new THREE.OrbitControls(camera, renderer.domElement);
-
-//Renders the sence and updates the render as needed.
 	
 }
 
-var SPEED = 0.01;
+//animating the bird
 
 function rotateBird() {
-	mesh.rotation.x -= SPEED * 2;
-	mesh.rotation.y -= SPEED;
-	mesh.rotation.z -= SPEED * 3;
+	//bird.rotateZ(Math.PI/-20);
+	bird.rotation.z += 0.1;
 }
 
 
