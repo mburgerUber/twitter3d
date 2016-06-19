@@ -6,17 +6,25 @@ animate();
 
 function init() {
 
-	scene = new THREE.PerseptiveCamera( 75, window.innerWidth / window.innerHeight, 1, 1000 );
-	camera.postion.z = 100;
+	scene = new THREE.Scene();
 
-	geometry = new KeyCode.THREE.BoxGeometry(200, 200, 200);
-	material = new THREE.MeshBasicMaterial( { color: 0xff0000, wireframe: true } );
+	camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 0.1, 2000 );
+	camera.position.z = 1000;
+
+	geometry = new THREE.BoxGeometry(200, 200, 200);
+	var material = new THREE.MeshLambertMaterial({color: 0x1DA1F2});
 	
+	var light = new THREE.AmbientLight( 0xffff );
+	scene.add( light );
+	var light = new THREE.PointLight(0xffffff);
+	light.position.set(3000,800,1500);
+	scene.add(light);
+
 	mesh = new THREE.Mesh( geometry, material );
 	scene.add( mesh );
 
 	renderer = new THREE.WebGLRenderer();
-	renderer.setsize(window.innerWidth, window.innerHeight );
+	renderer.setSize(window.innerWidth, window.innerHeight );
 
 	document.body.appendChild( renderer.domElement);
 
@@ -29,6 +37,6 @@ function animate() {
 	mesh.rotation.x += 0.01;
 	mesh.rotation.y += 0.02;
 
-	render( scene, camera );
+	renderer.render( scene, camera );
 
 }
