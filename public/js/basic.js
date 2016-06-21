@@ -11,7 +11,7 @@ function init() {
 	camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 0.1, 2000 );
 	camera.position.z = 1000;
 
-	geometry = new THREE.BoxGeometry(200, 200, 200);
+	geometry = new THREE.SphereGeometry(100, 32, 32);
 	var material = new THREE.MeshLambertMaterial({color: 0x1DA1F2});
 	
 	var light = new THREE.AmbientLight( 0xffff );
