@@ -12,3 +12,12 @@ body {
 	font-weight: 200;
 	font-weight: bold;
 }
+.nav { 
+	text-decoration: none;
+	color: #a6a6a6;
+	text-algin: center;
+	font-weight: bold;
+	display: inline-block;
+	margin-left: 20px;
+	margin-top: 20px;
+ }
