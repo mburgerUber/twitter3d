@@ -8,7 +8,7 @@ function init() {
 
 	scene = new THREE.Scene();
 
-	camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 0.1, 2000 );
+	camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 0.5, 2000 );
 	camera.position.z = 1000;
 
 	geometry = new THREE.SphereGeometry(100, 32, 32);
@@ -27,6 +27,7 @@ function init() {
 	renderer.setSize(window.innerWidth, window.innerHeight );
 
 	document.body.appendChild( renderer.domElement);
+	renderer.setClearColor(0xF3F6F9, 1);
 
 }
 
@@ -34,7 +35,7 @@ function animate() {
 
 	requestAnimationFrame( animate );
 
-	mesh.rotation.x += 0.01;
+	mesh.rotation.x += 0.02;
 	mesh.rotation.y += 0.02;
 
 	renderer.render( scene, camera );
