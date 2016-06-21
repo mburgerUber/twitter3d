@@ -11,13 +11,23 @@ body {
 	z-index: 1;
 	font-weight: 200;
 	font-weight: bold;
+	margin-top: 45%;
 }
 .nav { 
 	text-decoration: none;
 	color: #a6a6a6;
-	text-algin: center;
 	font-weight: bold;
 	display: inline-block;
 	margin-left: 20px;
 	margin-top: 20px;
+ }
+ canvas {
+ 	position: absolute;
+ 	top: 0;
+ 	left: 0;
+ 	z-index: -9999;
+ }
+
+ .pgTittle {
+ 	margin-left: 20px;
  }
