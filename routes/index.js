@@ -7,7 +7,11 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/basic', function(req, res, next){
-	res.render('basic', {title: 'rotatingCube' });
+	res.render('basic', {title: 'rotatingSphere' });
+});
+
+router.get('/loveislove', function(req, res, next){
+	res.render('loveislove', {title: '#LoveisLove' });
 });
 
 module.exports = router;
