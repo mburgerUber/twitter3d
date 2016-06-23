@@ -1,9 +1,9 @@
 //set up the secne, camera, and renderer as golbal variables.
 var scene, camera, renderer;
 var bird;
+
 init();
 animate();
-
 //Sets up the scene.
 function init() {
 
@@ -34,7 +34,7 @@ function init() {
 
 //load in the mesh and add it to the scene.
 	var loader = new THREE.JSONLoader();
-	loader.load("models/Heart.json", function(geometry) {
+	loader.load("models/Heart.js", function(geometry) {
 		var material = new THREE.MeshLambertMaterial({color: 0x1DA1F2});
 		bird = new THREE.Mesh(geometry, material);
 		scene.add(bird);
@@ -49,7 +49,7 @@ function init() {
 
 function rotateBird() {
 	//bird.rotateZ(Math.PI/-20);
-	//bird.rotation.z += 0.1;
+	bird.rotation.z += 0.01;
 }
 
 
@@ -59,7 +59,7 @@ function animate(){
 
 	//Render the scene.
 	renderer.render(scene, camera);
-	//rotateBird();
+	rotateBird();
 	controls.update();
 
 	}
