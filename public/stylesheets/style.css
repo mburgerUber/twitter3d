@@ -13,6 +13,15 @@ body {
 	font-weight: bold;
 	margin-top: 600px;
 }
+.me3 {
+	text-align: center;
+	color: #a6a6a6;
+	z-index: 1;
+	font-weight: 200;
+	font-weight: bold;
+	margin-top: 50%;
+
+}
 .me2 {
 	text-align: center;
 	color: #a6a6a6;
