@@ -13,6 +13,14 @@ body {
 	font-weight: bold;
 	margin-top: 600px;
 }
+.me2 {
+	text-align: center;
+	color: #a6a6a6;
+	z-index: 1;
+	font-weight: 200;
+	font-weight: bold;
+	margin-top: 6px;
+}
 .nav { 
 	text-decoration: none;
 	color: #a6a6a6;
@@ -30,4 +38,18 @@ body {
 
  .pgTittle {
  	margin-left: 20px;
+ }
+ .llTittle {
+ 	text-align: center;
+ 	font-size: 100px;
+ 	margin-top: -30px;
+ 	color: #8a69ae;
+
+ }
+
+ canvas.heart {
+ 	position: absolute;
+ 	top: 50;
+ 	left: 0;
+ 	z-index: -9999;
  }

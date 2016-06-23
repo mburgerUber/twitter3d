@@ -35,7 +35,7 @@ function init() {
 //load in the mesh and add it to the scene.
 	var loader = new THREE.JSONLoader();
 	loader.load("models/Heart.js", function(geometry) {
-		var material = new THREE.MeshLambertMaterial({color: 0x1DA1F2});
+		var material = new THREE.MeshLambertMaterial({color: 0xda3148});
 		bird = new THREE.Mesh(geometry, material);
 		scene.add(bird);
 	});
