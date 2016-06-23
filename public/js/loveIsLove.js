@@ -4,6 +4,7 @@ var bird;
 
 init();
 animate();
+
 //Sets up the scene.
 function init() {
 
@@ -39,6 +40,9 @@ function init() {
 		bird = new THREE.Mesh(geometry, material);
 		scene.add(bird);
 	});
+	//loading material
+	//var loader = new THREE.MaterialLoader();
+
 
 //add orbitControls so that we can pan around with the mouse.
 	controls = new THREE.OrbitControls(camera, renderer.domElement);
