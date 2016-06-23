@@ -11,7 +11,7 @@ router.get('/basic', function(req, res, next){
 });
 
 router.get('/loveislove', function(req, res, next){
-	res.render('loveisLove', {title: '#LoveisLove' });
+	res.render('loveisLove.jade', {title: '#LoveisLove' });
 });
 
 module.exports = router;
