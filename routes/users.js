@@ -10,4 +10,8 @@ router.get('/basic', function(req, res, next){
 	res.render('basic', {title: 'rotatingCube' });
 });
 
+router.get('/loveislove', function(req, res, next){
+	res.render('loveisLove.jade', {title: '#LoveisLove' });
+});
+
 module.exports = router;

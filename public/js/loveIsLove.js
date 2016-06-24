@@ -33,17 +33,33 @@ function init() {
 	var light = new THREE.AmbientLight(0xffffff);
 	scene.add(light);
 
+//loading material
+//var matloader = new THREE.MaterialLoader();
+//	matloader.load("models/SphereSurface_Color.jpg", function (material) {
+//		bird.material = material
+//	});
+
 //load in the mesh and add it to the scene.
-	var loader = new THREE.JSONLoader();
-	loader.load("models/Heart.js", function(geometry) {
+	//var loader = new THREE.JSONLoader();
+	//loader.load("models/heartColors.json", function(geometry, material) {
+	//	var texloader = new THREE.TextureLoader();
+	//	texloader.load('models/Color.jpg', function( texture ){
+	//		var material = new THREE.MeshBasicMaterial({ map: texture });
+	//	});
+	//	bird = new THREE.Mesh(geometry, material);
+	//	scene.add(bird);
+	//});
+	
+var loader = new THREE.JSONLoader();
+	loader.load("models/heartColors.json", function(geometry) {
 		var material = new THREE.MeshLambertMaterial({color: 0xda3148});
 		bird = new THREE.Mesh(geometry, material);
 		scene.add(bird);
 	});
-	//loading material
-	//var loader = new THREE.MaterialLoader();
+	
 
-
+//add orbitControls so that we can pan around with the mouse.
+	
 //add orbitControls so that we can pan around with the mouse.
 	controls = new THREE.OrbitControls(camera, renderer.domElement);
 	
