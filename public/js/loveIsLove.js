@@ -41,23 +41,49 @@ function init() {
 	//	scene.add(bird);
 	//});
 	//var loader = new THREE.JSONLoader();
-	//loader.load("models/Heart.js", function(geometry, materials) {
+	//loader.load("models/Heart.json", function(geometry, materials) {
 	//	var material = new THREE.MeshFaceMaterial( materials );
 	//	bird = new THREE.Mesh(geometry, material);
 	//	scene.add(bird);
 	//});
-	var loader = new. THREE.OBJLoader();
-	loader.load(
-		'models/Heart.obj',
-		function ( object ) {
-			scene.add( object );
-			}
-		);
-    //function createScene( geometry, materials ) {
+	//function createScene( geometry, materials ) {
     //    var bird = new THREE.Mesh( geometry, new THREE.MultiMaterial( materials ));
     //    scene.add(bird);
     //}
+    //texture
+	var manager = new THREE.LoadingManager();
+	manager.onProgress = function ( item, loaded, total ) {
 
+		console.log( item, loaded, total );
+	};
+	var texture = new THREE.Texture(); 
+
+	var onProgress = function (xhr) {
+		if ( xhr.lengthComputable ) {
+			var precentComplete = xhr.loaded / xhr.total * 100;
+			console.log( Math.round(percentComplete, 2) + '% download');
+		}
+	};
+    
+    var onError = function ( xhr ) {
+		};
+
+	var loader = new THREE.ImageLoader( manager );
+	loader.load( 'models/SphereSurface_Color.jpg', function ( image) {
+		texture.image = image;
+		texture.needsUpdate = true;
+	});
+
+		var loader = new THREE.OBJLoader( manager );
+				loader.load( 'models/heart.obj', function ( object ) {
+					object.traverse( function ( child ) {
+						if ( child instanceof THREE.Mesh ) {
+							child.material.map = texture;
+						}
+					} );
+					object.position.y = - 95;
+					scene.add( object );
+				}, onProgress, onError );
 
 //add orbitControls so that we can pan around with the mouse.
 	controls = new THREE.OrbitControls(camera, renderer.domElement);
