@@ -34,14 +34,29 @@ function init() {
 	scene.add(light);
 
 //load in the mesh and add it to the scene.
-	var loader = new THREE.JSONLoader();
-	loader.load("models/Heart.js", function(geometry) {
-		var material = new THREE.MeshLambertMaterial({color: 0xda3148});
-		bird = new THREE.Mesh(geometry, material);
-		scene.add(bird);
-	});
-	//loading material
-	//var loader = new THREE.MaterialLoader();
+	//var loader = new THREE.JSONLoader();
+	//loader.load("models/Heart.js", function(geometry) {
+	//	var material = new THREE.MeshLambertMaterial({color: 0xda3148});
+	//	bird = new THREE.Mesh(geometry, material);
+	//	scene.add(bird);
+	//});
+	//var loader = new THREE.JSONLoader();
+	//loader.load("models/Heart.js", function(geometry, materials) {
+	//	var material = new THREE.MeshFaceMaterial( materials );
+	//	bird = new THREE.Mesh(geometry, material);
+	//	scene.add(bird);
+	//});
+	var loader = new. THREE.OBJLoader();
+	loader.load(
+		'models/Heart.obj',
+		function ( object ) {
+			scene.add( object );
+			}
+		);
+    //function createScene( geometry, materials ) {
+    //    var bird = new THREE.Mesh( geometry, new THREE.MultiMaterial( materials ));
+    //    scene.add(bird);
+    //}
 
 
 //add orbitControls so that we can pan around with the mouse.
