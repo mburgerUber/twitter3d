@@ -38,27 +38,54 @@ body {
 	margin-left: 20px;
 	margin-top: 20px;
  }
- canvas {
+canvas {
  	position: absolute;
  	top: 0;
  	left: 0;
  	z-index: -9999;
  }
 
- .pgTittle {
+.pgTittle {
  	margin-left: 20px;
  }
- .llTittle {
+.llTittle {
  	text-align: center;
  	font-size: 100px;
- 	margin-top: -30px;
+ 	margin-top: 0px;
  	color: #8a69ae;
 
  }
 
- canvas.heart {
+canvas.heart {
  	position: absolute;
  	top: 50;
  	left: 0;
  	z-index: -9999;
  }
+
+.processing{
+	margin-left: 30px;
+}
+
+.codedBy {
+	text-align: center;
+	color: #a6a6a6;
+	z-index: 1;
+	font-weight: 200;
+	font-weight: bold;
+	margin-top: 10%;
+}
+xs#defaultCanvas0 {
+width: 720px;
+height: 400px;
+margin-left: auto;
+margin-right: auto;
+}
+
+canvas.processing{
+	width: 0;
+	height: 0;
+	position: float;
+}
+
+

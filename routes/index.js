@@ -11,7 +11,11 @@ router.get('/basic', function(req, res, next){
 });
 
 router.get('/loveislove', function(req, res, next){
-	res.render('loveisLove.jade', {title: '#LoveisLove' });
+	res.render('loveisLove', {title: '#LoveisLove' });
+});
+
+router.get('/Pexperiment', function(req, res, next){
+	res.render('pExperiment', {title: 'Pexperiment' });
 });
 
 module.exports = router;
