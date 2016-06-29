@@ -75,16 +75,17 @@ canvas.heart {
 	font-weight: bold;
 	margin-top: 10%;
 }
-xs#defaultCanvas0 {
-width: 720px;
-height: 400px;
+#defaultCanvas0 {
+width: 800px;
+height: 800px;
 margin-left: auto;
 margin-right: auto;
 }
 
 canvas.processing{
-	width: 0;
-	height: 0;
+	left: 400px;
+	width: 800px;
+	height: 800px;
 	position: float;
 }
 

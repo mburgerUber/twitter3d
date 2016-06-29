@@ -5,6 +5,7 @@ var bird;
 init();
 animate();
 
+
 //Sets up the scene.
 function init() {
 
@@ -35,11 +36,22 @@ function init() {
 
 //load in the mesh and add it to the scene.
 	var loader = new THREE.JSONLoader();
-	loader.load("models/Heart.js", function(geometry) {
-		var material = new THREE.MeshLambertMaterial({color: 0xda3148});
+	var loader = new THREE.TextureLoader();
+	loader.load(
+	// resource URL
+	'models/SphereSurface_Color.jpg',
+	// Function when resource is loaded
+	function ( texture ) {
+		// do something with the texture
+		var material = new THREE.MeshBasicMaterial( {
+			map: texture
+		 } );
+	});
+	loader.load("models/Heart.json", function(geometry) {
 		bird = new THREE.Mesh(geometry, material);
 		scene.add(bird);
 	});
+	
 	//var loader = new THREE.JSONLoader();
 	//loader.load("models/Heart.json", function(geometry, materials) {
 	//	var material = new THREE.MeshFaceMaterial( materials );
